@@ -7,20 +7,6 @@ from typing import List
 import models
 import schemas
 import auth
-from database import engine, get_db
-import os
-from dotenv import load_dotenv
-import shutil
-from pathlib import Path
-
-load_dotenv()
-
-# Initialize admin user
-@app.on_event("startup")
-async def startup():
-    db = next(get_db())
-    admin_email = os.getenv("ADMIN_EMAIL")
-    admin_password = os.getenv("ADMIN_PASSWORD")
     
     existing_admin = db.query(models.User).filter(models.User.email == admin_email).first()
     if not existing_admin:
