@@ -1,0 +1,10 @@
+{
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "extensions.ignoreRecommendations": false,
+  "editor.defaultFormatter": null,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  }
+}
