@@ -57,6 +57,7 @@ const AdminLogin = () => {
             </div>
             <h2 className="text-3xl font-bold text-primary">Admin Login</h2>
             <p className="text-gray-600 mt-2">Access the admin dashboard</p>
+            <p className="text-xs text-gray-400 mt-1">v1.1 Debug</p>
           </div>
 
           {error && (

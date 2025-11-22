@@ -15,23 +15,6 @@ from pathlib import Path
 
 load_dotenv()
 
-# Create database tables
-models.Base.metadata.create_all(bind=engine)
-
-app = FastAPI(title="Exito Engineering API")
-
-# CORS middleware
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173"],  # React dev servers
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# Create upload directory
-UPLOAD_DIR = Path("uploads")
-UPLOAD_DIR.mkdir(exist_ok=True)
 
 # Initialize admin user
 @app.on_event("startup")
