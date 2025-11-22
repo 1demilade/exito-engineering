@@ -39,8 +39,9 @@ const AdminLogin = () => {
       setToken(response.data.access_token);
       navigate("/admin/dashboard");
     } catch (err) {
-      setError("Invalid credentials. Please try again.");
       console.error("Login error:", err);
+      const errorMessage = err.response?.data?.detail || err.message || "Login failed. Please check your connection and credentials.";
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
