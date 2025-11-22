@@ -15,7 +15,6 @@ from pathlib import Path
 
 load_dotenv()
 
-
 # Initialize admin user
 @app.on_event("startup")
 async def startup_event():
