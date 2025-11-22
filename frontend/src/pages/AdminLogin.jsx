@@ -31,8 +31,8 @@ const AdminLogin = () => {
       params.append("username", credentials.username);
       params.append("password", credentials.password);
 
-      const response = await axios.post(
-        "http://localhost:8000/api/auth/login",
+      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000/api';
+      const response = await axios.post(`${API_URL.replace('/api', '')}/api/auth/login`,
         params,
         { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
       );
