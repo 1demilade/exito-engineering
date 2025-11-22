@@ -17,7 +17,7 @@ load_dotenv()
 
 # Initialize admin user
 @app.on_event("startup")
-async def startup_event():
+async def startup():
     db = next(get_db())
     admin_email = os.getenv("ADMIN_EMAIL")
     admin_password = os.getenv("ADMIN_PASSWORD")
